@@ -1,7 +1,5 @@
 ## Introducción
 
-## Introducción
-
 En esta página vamos a hablar sobre la implementación del Fórmula 1 inteligente que debe de seguir una línea a lo largo de circuito. Para ello describiremos en las siguientes secciones los pasos seguidos hasta obtener el resultado que se muestra en el video.
 
 ## La primera vuelta
