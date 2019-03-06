@@ -12,7 +12,7 @@ Para ello utilizaremos un controlador proporcional **P**, este controlador minim
 
 Por otro lado compararemos este punto de referencia con el punto correspondiente al centro de la línea en cada fotograma, el cálculo lo realizaremos en base a la altura definida para el punto de referencia. Podemos entender este segundo punto como el punto objetivo al que deseamos que se desplace nuestro coche. A continuación se muestra gráficamente la diferencia entre el punto de referencia (azul) y el nuevo objetivo (verde):
 
-//todo
+![reference](https://github.com/garciamorenc/followline.github.io/blob/master/media/two_point.png)
 
 Es muy importante el uso de una única fila y columna para el cálculo de los puntos mencionados anteriormente, ya que de este modo tendremos un código con mayor rendimiento al tener que realizar un menor número de operaciones.
 
