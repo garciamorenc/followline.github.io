@@ -1,6 +1,6 @@
 ## Introducción
 
-En esta página vamos a hablar sobre la implementación del Fórmula 1 inteligente que debe de seguir una línea a lo largo de circuito. Para ello describiremos en las siguientes secciones los pasos seguidos hasta obtener el resultado que se muestra en el video.
+En esta página vamos a hablar sobre la implementación del Fórmula 1 inteligente que debe de seguir una línea a lo largo de circuito mediante la aplicación de un controlador PD. Para ello describiremos en las siguientes secciones los pasos seguidos hasta obtener el resultado que se muestra en siguiente video.
 
 ## La primera vuelta
 
