@@ -30,10 +30,10 @@ En este punto mantendremos como único grado de libertad el giro del coche, de m
 
 Para ajustar los pesos del controlador hemos seguido los siguientes pasos, los cuales han dado un resultado bastante bueno a la hora de llegar a un comportamiento óptimo.
 
-Establecemos todos los pesos a 0.
-Aumentar el peso de la componente **P** hasta que la reacción sea una oscilación constante.
-Aumentar el peso de la componente **D** hasta que desaparezcan las oscilaciones.
-Repetir los pasos 2 y 3 hasta que el aumento de la componente **D** no detenga las oscilaciones.
+1. Establecemos todos los pesos a 0.
+2. Aumentar el peso de la componente **P** hasta que la reacción sea una oscilación constante.
+3. Aumentar el peso de la componente **D** hasta que desaparezcan las oscilaciones.
+4. Repetir los pasos 2 y 3 hasta que el aumento de la componente **D** no detenga las oscilaciones.
 
 **Nota:** en cada una de las secciones de esta página se ha realizado un reajuste de pesos a través de estas pautas.
 
@@ -68,9 +68,9 @@ Por tanto, duplicaremos los dos controladores que teníamos anteriormente, espec
 
 Para la distinción entre rectas y curvas se plantearon tres posibles opciones:
 
-Calcular el centro de la línea a tres alturas diferentes, si estás tres coordenadas se encontraban alineadas estaremos en recta.
-División del centro de la imagen en tres rectángulos, uno central inferior que debería abarcar la mayor cantidad de línea en caso de estar en recta y dos superiores a izquierda y derecha. De este modo estaríamos en curva cuando los rectángulos superiores detecten línea, y en recta cuando los rectángulos superiores no detecten nada mientras que el central inferior posea un gran área de la línea.
-Cálculo del centro de la línea a dos alturas diferentes, siendo estas alturas en la parte superior de la línea y bastante próximas. Si ambas coordenadas se encuentran alineadas (o casi alineadas) respecto al eje vertical y esta condición se produce a lo largo de un número de veces consecutivas entonces estaremos en una recta.
+1. Calcular el centro de la línea a tres alturas diferentes, si estás tres coordenadas se encontraban alineadas estaremos en recta.
+2. División del centro de la imagen en tres rectángulos, uno central inferior que debería abarcar la mayor cantidad de línea en caso de estar en recta y dos superiores a izquierda y derecha. De este modo estaríamos en curva cuando los rectángulos superiores detecten línea, y en recta cuando los rectángulos superiores no detecten nada mientras que el central inferior posea un gran área de la línea.
+3. Cálculo del centro de la línea a dos alturas diferentes, siendo estas alturas en la parte superior de la línea y bastante próximas. Si ambas coordenadas se encuentran alineadas (o casi alineadas) respecto al eje vertical y esta condición se produce a lo largo de un número de veces consecutivas entonces estaremos en una recta.
 
 La opción que mejores resultados dió fué la tercera, ya que al seleccionar dos puntos en la parte superior de la línea tendremos una alta variabilidad entre ellos, en cuanto nos estemos acercando a una curva o estemos ya dentro de una el punto superior estará muy alejado del segundo y activaremos la configuración más conservadora para tomar lo mejor posible la curva. En la siguiente imagen se muestra a modo representativo los puntos escogidos el punto rosa corresponde al superior y el azul a inferior que a su vez corresponde con el punto obtenido como nuevo objetivo en cada frame.
 
