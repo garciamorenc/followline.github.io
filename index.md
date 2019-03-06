@@ -74,7 +74,7 @@ Cálculo del centro de la línea a dos alturas diferentes, siendo estas alturas 
 
 La opción que mejores resultados dió fué la tercera, ya que al seleccionar dos puntos en la parte superior de la línea tendremos una alta variabilidad entre ellos, en cuanto nos estemos acercando a una curva o estemos ya dentro de una el punto superior estará muy alejado del segundo y activaremos la configuración más conservadora para tomar lo mejor posible la curva. En la siguiente imagen se muestra a modo representativo los puntos escogidos el punto rosa corresponde al superior y el azul a inferior que a su vez corresponde con el punto obtenido como nuevo objetivo en cada frame.
 
-[top_point](https://github.com/garciamorenc/followline.github.io/blob/master/media/top_point.png)
+![top_point](https://github.com/garciamorenc/followline.github.io/blob/master/media/top_point.png)
 
 Cabe destacar que el cálculo de pesos para el controlador de giro en recta no resulta sencillo, ya que a máxima velocidad recorreremos la recta en muy poco tiempo y será difícil encontrar los valores óptimos.
 
