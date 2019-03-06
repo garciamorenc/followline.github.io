@@ -8,7 +8,7 @@ Tras una primera toma de contacto con la plataforma y haber entendido la interfa
 
 Para ello utilizaremos un controlador proporcional **P**, este controlador minimizará el error respecto al punto de referencia que hayamos definido para que nuestro coche siga la línea. ¿Y qué coordenadas de la imagen escogemos como punto de referencia?, en el caso ideal la línea debería estar siempre en el centro de la imagen, por tanto teniendo en cuenta que el tamaño de la imagen es de 480x640 y que la línea no abarca el eje vertical completo deberemos elegir como punto de referencia la columna 320 y un punto entre las filas 240 y 480. Podemos ver un ejemplo en la siguiente imagen:
 
-[obj_point](https://github.com/garciamorenc/followline.github.io/blob/master/media/one_point.png)
+![obj_point](https://github.com/garciamorenc/followline.github.io/blob/master/media/one_point.png)
 
 Por otro lado compararemos este punto de referencia con el punto correspondiente al centro de la línea en cada fotograma, el cálculo lo realizaremos en base a la altura definida para el punto de referencia. Podemos entender este segundo punto como el punto objetivo al que deseamos que se desplace nuestro coche. A continuación se muestra gráficamente la diferencia entre el punto de referencia (azul) y el nuevo objetivo (verde):
 
@@ -74,7 +74,7 @@ Cálculo del centro de la línea a dos alturas diferentes, siendo estas alturas 
 
 La opción que mejores resultados dió fué la tercera, ya que al seleccionar dos puntos en la parte superior de la línea tendremos una alta variabilidad entre ellos, en cuanto nos estemos acercando a una curva o estemos ya dentro de una el punto superior estará muy alejado del segundo y activaremos la configuración más conservadora para tomar lo mejor posible la curva. En la siguiente imagen se muestra a modo representativo los puntos escogidos el punto rosa corresponde al superior y el azul a inferior que a su vez corresponde con el punto obtenido como nuevo objetivo en cada frame.
 
-//TODO
+[top_point](https://github.com/garciamorenc/followline.github.io/blob/master/media/top_point.png)
 
 Cabe destacar que el cálculo de pesos para el controlador de giro en recta no resulta sencillo, ya que a máxima velocidad recorreremos la recta en muy poco tiempo y será difícil encontrar los valores óptimos.
 
