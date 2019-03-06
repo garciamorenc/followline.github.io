@@ -57,10 +57,10 @@ Tras varias pruebas hemos visto que la mejor elección es un punto de referencia
 
 Por último, para mejorar tiempo por vuelta de nuestro F1 deberemos diferenciar entre rectas y curvas, para aplicar distintos controladores en estos dos posibles estados. Por tanto finalmente tendremos un total de cuatro controladores **PD**.
 
-Controlador de giro en curva.
-Controlador de velocidad en curva.
-Controlador de giro en recta.
-Controlador de velocidad en recta.
+- Controlador de giro en curva.
+- Controlador de velocidad en curva.
+- Controlador de giro en recta.
+- Controlador de velocidad en recta.
 
 De modo que esta diferenciación nos permitirá ser más tolerantes a la hora de corregir el error en recta o exigir una mayor brusquedad en caso de estar en curva, además podremos definir distintas velocidades máximas en cada estado (en recta intentaremos ir al máximo mientras que en curva tendremos una velocidad más prudente).
 
