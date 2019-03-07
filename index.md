@@ -16,7 +16,7 @@ Para ello utilizaremos un controlador proporcional **P**, este controlador minim
 
 ![obj_point](/media/one_point.png)
 
-Por otro lado compararemos este punto de referencia con el punto correspondiente al centro de la línea en cada fotograma, el cálculo lo realizaremos en base a la altura definida para el punto de referencia. Podemos entender este segundo punto como el punto objetivo al que deseamos que se desplace nuestro coche. A continuación se muestra gráficamente la diferencia entre el punto de referencia (azul) y el nuevo objetivo (verde):
+Por otro lado compararemos este punto de referencia con el punto correspondiente al centro de la línea en cada fotograma, el cálculo lo realizaremos en base a la altura definida para el punto de referencia. Podemos entender este segundo punto como el punto objetivo al que deseamos que se desplace nuestro coche. A continuación se muestra gráficamente la diferencia entre el punto de referencia (verde) y el nuevo objetivo (azul):
 
 ![reference](/media/two_point.png)
 
