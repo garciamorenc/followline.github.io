@@ -49,7 +49,9 @@ Hasta ahora nuestro único grado de libertad era el giro, llegados a este punto 
 
 Del mismo modo que se realizaba con el controlador de giro, utilizaremos el error entre el punto objetivo y el punto de referencia para calcular la componente **P** de este nuevo controlador. Y por otro lado el error actual y el error de la iteración anterior para calcular la componente **D**.
 
-Comenzaremos por el ajuste de pesos para la componente **P** la cual hará que nuestra simulación vuelva a tener un comportamiento oscilante. Un comportamiento el cual la componente **D** que incluyamos posteriormente deberá de suavizar. Por tanto siguiendo la metodología de la anterior sección tendremos que ajustar tanto los pesos del nuevo controlador **PD** para la velocidad como reajustar nuevamente el controlador de giro, hasta llegar a los valores más óptimos posibles. Esto es debido a que la reacción de los controladores están relacionada directamente entre sí y por tanto son dependientes.
+Comenzaremos por el ajuste de pesos para la componente **P** la cual hará que nuestra simulación vuelva a tener un comportamiento oscilante. Un comportamiento el cual la componente **D** que incluyamos posteriormente deberá de suavizar. Por tanto siguiendo la metodología de la anterior sección tendremos que ajustar tanto los pesos del nuevo controlador **PD** para la velocidad como reajustar nuevamente el controlador de giro, hasta llegar a los valores más óptimos posibles. Esto es debido a que la reacción de los controladores está relacionada directamente entre sí y por tanto son dependientes.
+
+Con la finalidad de ajustar el controlador **PD** resultó de gran utilidad calcular nuestra velocidad restando la salida de las componentes a un valor máximo de velocidad que habremos escogido previamente.
 
 ## Mejorando el punto de referencia
 
@@ -61,7 +63,7 @@ Tras varias pruebas hemos visto que la mejor elección es un punto de referencia
 
 ## Diferenciar entre rectas y curvas
 
-Por último, para mejorar tiempo por vuelta de nuestro F1 deberemos diferenciar entre rectas y curvas, para aplicar distintos controladores en estos dos posibles estados. Por tanto finalmente tendremos un total de cuatro controladores **PD**.
+Por último, para mejorar el tiempo por vuelta de nuestro F1 deberemos diferenciar entre rectas y curvas, para aplicar distintos controladores en estos dos posibles estados. Por tanto finalmente tendremos un total de cuatro controladores **PD**.
 
 - Controlador de giro en curva.
 - Controlador de velocidad en curva.
@@ -86,7 +88,7 @@ Cabe destacar que el cálculo de pesos para el controlador de giro en recta no r
 
 ## ¿Y si pierdo la línea?
 
-En caso de perder de vista la línea se ha decidido parar el coche y comenzar a girar en el sitio hasta volver a verla de nuevo, realizando el giro en función de la última dirección previa a la pérdida de información.
+En caso de perder de vista la línea se ha decidido parar el coche y comenzar a girar en el sitio hasta volver a detectarla de nuevo, realizando el giro en función de la última dirección previa a la pérdida de información.
 
 ## Conclusiones
 
