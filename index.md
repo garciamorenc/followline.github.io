@@ -8,6 +8,16 @@ En esta página vamos a hablar sobre la implementación del Fórmula 1 inteligen
   <source src="https://vimeo.com/321873690" type="video/mp4" />
 </video>
 
+<div class="embed-container">
+  <iframe
+      src="https://vimeo.com/321873690"
+      width="700"
+      height="480"
+      frameborder="0"
+      allowfullscreen="">
+  </iframe>
+</div>
+
 ## La primera vuelta
 
 Tras una primera toma de contacto con la plataforma y haber entendido la interfaz que proporciona tanto para el control del coche como para el tratamiento de la imagen, nuestro primer objetivo será conseguir dar una vuelta completa al circuito a través de un controlador lo más básico posible.
