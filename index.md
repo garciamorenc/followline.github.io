@@ -3,7 +3,6 @@
 En esta página vamos a hablar sobre la implementación del Fórmula 1 inteligente que debe de seguir una línea a lo largo de circuito mediante la aplicación de un controlador PD. Para ello describiremos en las siguientes secciones los pasos seguidos hasta obtener el resultado que se muestra en siguiente video.
 
 [![Follow line](https://i.imgur.com/J0pqa8L.png)](https://vimeo.com/321873690 "Follow line - Click to Watch!")
-[![Little red ridning hood](http://i.imgur.com/7YTMFQp.png)](https://vimeo.com/3514904 "Little red riding hood - Click to Watch!")
 
 ## La primera vuelta
 
