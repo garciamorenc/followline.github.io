@@ -8,6 +8,8 @@ En esta página vamos a hablar sobre la implementación del Fórmula 1 inteligen
 
 Tras una primera toma de contacto con la plataforma y haber entendido la interfaz que proporciona tanto para el control del coche como para el tratamiento de la imagen, nuestro primer objetivo será conseguir dar una vuelta completa al circuito a través de un controlador lo más básico posible.
 
+A partir de este punto todas las operaciones que se indiquen sobre la imagen serán sobre la imagen umbrazilada a través del filtro de color rojo.
+
 Para ello utilizaremos un controlador proporcional **P**, este controlador minimizará el error respecto al punto de referencia que hayamos definido para que nuestro coche siga la línea. ¿Y qué coordenadas de la imagen escogemos como punto de referencia?, en el caso ideal la línea debería estar siempre en el centro de la imagen, por tanto teniendo en cuenta que el tamaño de la imagen es de 480x640 y que la línea no abarca el eje vertical completo deberemos elegir como punto de referencia la columna 320 y un punto entre las filas 240 y 480. Podemos ver un ejemplo en la siguiente imagen:
 
 ![obj_point](/media/one_point.png)
