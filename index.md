@@ -8,15 +8,11 @@ En esta página vamos a hablar sobre la implementación del Fórmula 1 inteligen
   <source src="https://vimeo.com/321873690" type="video/mp4" />
 </video>
 
-<div class="embed-container">
-  <iframe
-      src="https://vimeo.com/321873690"
-      width="700"
-      height="480"
-      frameborder="0"
-      allowfullscreen="">
-  </iframe>
-</div>
+ <video width="320" height="240" controls>
+  <source src="https://vimeo.com/321873690" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+Your browser does not support the video tag.
+</video> 
 
 ## La primera vuelta
 
