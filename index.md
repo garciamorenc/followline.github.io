@@ -2,17 +2,19 @@
 
 En esta página vamos a hablar sobre la implementación del Fórmula 1 inteligente que debe de seguir una línea a lo largo de circuito mediante la aplicación de un controlador PD. Para ello describiremos en las siguientes secciones los pasos seguidos hasta obtener el resultado que se muestra en siguiente video.
 
+[![Follow line](https://i.imgur.com/J0pqa8L.png)](https://vimeo.com/321873690 "Follow line - Click to Watch!")
+
 ## La primera vuelta
 
 Tras una primera toma de contacto con la plataforma y haber entendido la interfaz que proporciona tanto para el control del coche como para el tratamiento de la imagen, nuestro primer objetivo será conseguir dar una vuelta completa al circuito a través de un controlador lo más básico posible.
 
 Para ello utilizaremos un controlador proporcional **P**, este controlador minimizará el error respecto al punto de referencia que hayamos definido para que nuestro coche siga la línea. ¿Y qué coordenadas de la imagen escogemos como punto de referencia?, en el caso ideal la línea debería estar siempre en el centro de la imagen, por tanto teniendo en cuenta que el tamaño de la imagen es de 480x640 y que la línea no abarca el eje vertical completo deberemos elegir como punto de referencia la columna 320 y un punto entre las filas 240 y 480. Podemos ver un ejemplo en la siguiente imagen:
 
-![obj_point](https://github.com/garciamorenc/followline.github.io/blob/master/media/one_point.png)
+![obj_point](/media/one_point.png)
 
 Por otro lado compararemos este punto de referencia con el punto correspondiente al centro de la línea en cada fotograma, el cálculo lo realizaremos en base a la altura definida para el punto de referencia. Podemos entender este segundo punto como el punto objetivo al que deseamos que se desplace nuestro coche. A continuación se muestra gráficamente la diferencia entre el punto de referencia (azul) y el nuevo objetivo (verde):
 
-![reference](https://github.com/garciamorenc/followline.github.io/blob/master/media/two_point.png)
+![reference](/media/two_point.png)
 
 Es muy importante el uso de una única fila y columna para el cálculo de los puntos mencionados anteriormente, ya que de este modo tendremos un código con mayor rendimiento al tener que realizar un menor número de operaciones.
 
@@ -74,7 +76,7 @@ Para la distinción entre rectas y curvas se plantearon tres posibles opciones:
 
 La opción que mejores resultados dió fué la tercera, ya que al seleccionar dos puntos en la parte superior de la línea tendremos una alta variabilidad entre ellos, en cuanto nos estemos acercando a una curva o estemos ya dentro de una el punto superior estará muy alejado del segundo y activaremos la configuración más conservadora para tomar lo mejor posible la curva. En la siguiente imagen se muestra a modo representativo los puntos escogidos el punto rosa corresponde al superior y el azul a inferior que a su vez corresponde con el punto obtenido como nuevo objetivo en cada frame.
 
-![top_point](https://github.com/garciamorenc/followline.github.io/blob/master/media/top_point.png)
+![top_point](/media/top_point.png)
 
 Cabe destacar que el cálculo de pesos para el controlador de giro en recta no resulta sencillo, ya que a máxima velocidad recorreremos la recta en muy poco tiempo y será difícil encontrar los valores óptimos.
 
@@ -84,6 +86,6 @@ En caso de perder de vista la línea se ha decidido parar el coche y comenzar a 
 
 ## Conclusiones
 
-Se ha llegado a obtener unos tiempo de vuelta entorno a los 26s - 28s como se puede ver en el vídeo del inicio, tras aplicar todo lo comentado a lo largo de la página. Es posible bajar a tiempos de 22s o 24s pero para ello habría que recortar las curvas por el interior, es decir, abandonar ligeramente la línea, por lo que no estaríamos siguiendola al 100%. 
+Tras aplicar todo lo comentado a lo largo de la página, se ha llegado a obtener unos tiempos de vuelta entorno a los 26s - 28s como se puede ver en el vídeo del inicio. Es posible bajar a tiempos de 22s o 24s pero para ello habría que recortar las curvas por el interior, es decir, abandonar ligeramente la línea, por lo que no estaríamos siguiendola al 100%. 
 
 Además también sería necesario aumentar la velocidad en curva, se ha comprobado que aun ajustando los controladores **PD** para esta nueva velocidad el comportamiento se vuelve menos robusto y por ejemplo un pequeño retraso en la obtención de las imágenes empeora en gran medida el seguimiento de la línea.
