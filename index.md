@@ -2,7 +2,7 @@
 
 En esta página vamos a hablar sobre la implementación del Fórmula 1 inteligente que debe de seguir una línea a lo largo de circuito mediante la aplicación de un controlador PD. Para ello describiremos en las siguientes secciones los pasos seguidos hasta obtener el resultado que se muestra en siguiente video.
 
-![video](https://github.com/garciamorenc/followline.github.io/blob/master/media/followline.mp4)
+![video](https://vimeo.com/user95914112/review/321873690/3799c30328)
 
 ## La primera vuelta
 
@@ -86,6 +86,6 @@ En caso de perder de vista la línea se ha decidido parar el coche y comenzar a 
 
 ## Conclusiones
 
-Se ha llegado a obtener unos tiempo de vuelta entorno a los 26s - 28s como se puede ver en el vídeo del inicio, tras aplicar todo lo comentado a lo largo de la página. Es posible bajar a tiempos de 22s o 24s pero para ello habría que recortar las curvas por el interior, es decir, abandonar ligeramente la línea, por lo que no estaríamos siguiendola al 100%. 
+Tras aplicar todo lo comentado a lo largo de la página, se ha llegado a obtener unos tiempos de vuelta entorno a los 26s - 28s como se puede ver en el vídeo del inicio. Es posible bajar a tiempos de 22s o 24s pero para ello habría que recortar las curvas por el interior, es decir, abandonar ligeramente la línea, por lo que no estaríamos siguiendola al 100%. 
 
 Además también sería necesario aumentar la velocidad en curva, se ha comprobado que aun ajustando los controladores **PD** para esta nueva velocidad el comportamiento se vuelve menos robusto y por ejemplo un pequeño retraso en la obtención de las imágenes empeora en gran medida el seguimiento de la línea.
