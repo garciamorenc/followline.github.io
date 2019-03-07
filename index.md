@@ -4,7 +4,7 @@ En esta página vamos a hablar sobre la implementación del Fórmula 1 inteligen
 
 [![Follow line](https://i.imgur.com/KKr62dX.png)](https://vimeo.com/321873690 "Follow line - Click to Watch!")
 
-<video width="70%" controls>
+<video width="70%" controls poster="https://i.imgur.com/KKr62dX.png">
   <source src="./media/followline.mp4" type="video/mp4">
 </video> 
 
