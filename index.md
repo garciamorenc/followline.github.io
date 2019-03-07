@@ -1,4 +1,4 @@
-## Introducción
+https://raw.githubusercontent.com/garciamorenc/followline.github.io/master/media/one_point.png## Introducción
 
 En esta página vamos a hablar sobre la implementación del Fórmula 1 inteligente que debe de seguir una línea a lo largo de circuito mediante la aplicación de un controlador PD. Para ello describiremos en las siguientes secciones los pasos seguidos hasta obtener el resultado que se muestra en siguiente video.
 
@@ -14,7 +14,7 @@ Para ello utilizaremos un controlador proporcional **P**, este controlador minim
 
 Por otro lado compararemos este punto de referencia con el punto correspondiente al centro de la línea en cada fotograma, el cálculo lo realizaremos en base a la altura definida para el punto de referencia. Podemos entender este segundo punto como el punto objetivo al que deseamos que se desplace nuestro coche. A continuación se muestra gráficamente la diferencia entre el punto de referencia (azul) y el nuevo objetivo (verde):
 
-[reference](https://github.com/garciamorenc/followline.github.io/blob/master/media/two_point.png)
+![reference](/media/two_point.png)
 
 Es muy importante el uso de una única fila y columna para el cálculo de los puntos mencionados anteriormente, ya que de este modo tendremos un código con mayor rendimiento al tener que realizar un menor número de operaciones.
 
@@ -76,7 +76,7 @@ Para la distinción entre rectas y curvas se plantearon tres posibles opciones:
 
 La opción que mejores resultados dió fué la tercera, ya que al seleccionar dos puntos en la parte superior de la línea tendremos una alta variabilidad entre ellos, en cuanto nos estemos acercando a una curva o estemos ya dentro de una el punto superior estará muy alejado del segundo y activaremos la configuración más conservadora para tomar lo mejor posible la curva. En la siguiente imagen se muestra a modo representativo los puntos escogidos el punto rosa corresponde al superior y el azul a inferior que a su vez corresponde con el punto obtenido como nuevo objetivo en cada frame.
 
-![top_point](https://github.com/garciamorenc/followline.github.io/blob/master/media/top_point.png)
+![top_point](/media/top_point.png)
 
 Cabe destacar que el cálculo de pesos para el controlador de giro en recta no resulta sencillo, ya que a máxima velocidad recorreremos la recta en muy poco tiempo y será difícil encontrar los valores óptimos.
 
