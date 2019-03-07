@@ -2,6 +2,8 @@
 
 En esta página vamos a hablar sobre la implementación del Fórmula 1 inteligente que debe de seguir una línea a lo largo de circuito mediante la aplicación de un controlador PD. Para ello describiremos en las siguientes secciones los pasos seguidos hasta obtener el resultado que se muestra en siguiente video.
 
+![video](https://github.com/garciamorenc/followline.github.io/blob/master/media/followline.mp4)
+
 ## La primera vuelta
 
 Tras una primera toma de contacto con la plataforma y haber entendido la interfaz que proporciona tanto para el control del coche como para el tratamiento de la imagen, nuestro primer objetivo será conseguir dar una vuelta completa al circuito a través de un controlador lo más básico posible.
