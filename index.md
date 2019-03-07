@@ -1,6 +1,6 @@
 ## Introducción
 
-En esta página vamos a hablar sobre la implementación del Fórmula 1 inteligente que debe de seguir una línea a lo largo de circuito. Para ello describiremos en las siguientes secciones los pasos seguidos hasta obtener el resultado que se muestra en el video.
+En esta página vamos a hablar sobre la implementación del Fórmula 1 inteligente que debe de seguir una línea a lo largo de circuito mediante la aplicación de un controlador PD. Para ello describiremos en las siguientes secciones los pasos seguidos hasta obtener el resultado que se muestra en siguiente video.
 
 ## La primera vuelta
 
@@ -8,11 +8,11 @@ Tras una primera toma de contacto con la plataforma y haber entendido la interfa
 
 Para ello utilizaremos un controlador proporcional **P**, este controlador minimizará el error respecto al punto de referencia que hayamos definido para que nuestro coche siga la línea. ¿Y qué coordenadas de la imagen escogemos como punto de referencia?, en el caso ideal la línea debería estar siempre en el centro de la imagen, por tanto teniendo en cuenta que el tamaño de la imagen es de 480x640 y que la línea no abarca el eje vertical completo deberemos elegir como punto de referencia la columna 320 y un punto entre las filas 240 y 480. Podemos ver un ejemplo en la siguiente imagen:
 
-//todo
+![obj_point](https://github.com/garciamorenc/followline.github.io/blob/master/media/one_point.png)
 
 Por otro lado compararemos este punto de referencia con el punto correspondiente al centro de la línea en cada fotograma, el cálculo lo realizaremos en base a la altura definida para el punto de referencia. Podemos entender este segundo punto como el punto objetivo al que deseamos que se desplace nuestro coche. A continuación se muestra gráficamente la diferencia entre el punto de referencia (azul) y el nuevo objetivo (verde):
 
-//todo
+![reference](https://github.com/garciamorenc/followline.github.io/blob/master/media/two_point.png)
 
 Es muy importante el uso de una única fila y columna para el cálculo de los puntos mencionados anteriormente, ya que de este modo tendremos un código con mayor rendimiento al tener que realizar un menor número de operaciones.
 
@@ -30,10 +30,10 @@ En este punto mantendremos como único grado de libertad el giro del coche, de m
 
 Para ajustar los pesos del controlador hemos seguido los siguientes pasos, los cuales han dado un resultado bastante bueno a la hora de llegar a un comportamiento óptimo.
 
-Establecemos todos los pesos a 0.
-Aumentar el peso de la componente **P** hasta que la reacción sea una oscilación constante.
-Aumentar el peso de la componente **D** hasta que desaparezcan las oscilaciones.
-Repetir los pasos 2 y 3 hasta que el aumento de la componente **D** no detenga las oscilaciones.
+1. Establecemos todos los pesos a 0.
+2. Aumentar el peso de la componente **P** hasta que la reacción sea una oscilación constante.
+3. Aumentar el peso de la componente **D** hasta que desaparezcan las oscilaciones.
+4. Repetir los pasos 2 y 3 hasta que el aumento de la componente **D** no detenga las oscilaciones.
 
 **Nota:** en cada una de las secciones de esta página se ha realizado un reajuste de pesos a través de estas pautas.
 
@@ -57,10 +57,10 @@ Tras varias pruebas hemos visto que la mejor elección es un punto de referencia
 
 Por último, para mejorar tiempo por vuelta de nuestro F1 deberemos diferenciar entre rectas y curvas, para aplicar distintos controladores en estos dos posibles estados. Por tanto finalmente tendremos un total de cuatro controladores **PD**.
 
-Controlador de giro en curva.
-Controlador de velocidad en curva.
-Controlador de giro en recta.
-Controlador de velocidad en recta.
+- Controlador de giro en curva.
+- Controlador de velocidad en curva.
+- Controlador de giro en recta.
+- Controlador de velocidad en recta.
 
 De modo que esta diferenciación nos permitirá ser más tolerantes a la hora de corregir el error en recta o exigir una mayor brusquedad en caso de estar en curva, además podremos definir distintas velocidades máximas en cada estado (en recta intentaremos ir al máximo mientras que en curva tendremos una velocidad más prudente).
 
@@ -68,13 +68,13 @@ Por tanto, duplicaremos los dos controladores que teníamos anteriormente, espec
 
 Para la distinción entre rectas y curvas se plantearon tres posibles opciones:
 
-Calcular el centro de la línea a tres alturas diferentes, si estás tres coordenadas se encontraban alineadas estaremos en recta.
-División del centro de la imagen en tres rectángulos, uno central inferior que debería abarcar la mayor cantidad de línea en caso de estar en recta y dos superiores a izquierda y derecha. De este modo estaríamos en curva cuando los rectángulos superiores detecten línea, y en recta cuando los rectángulos superiores no detecten nada mientras que el central inferior posea un gran área de la línea.
-Cálculo del centro de la línea a dos alturas diferentes, siendo estas alturas en la parte superior de la línea y bastante próximas. Si ambas coordenadas se encuentran alineadas (o casi alineadas) respecto al eje vertical y esta condición se produce a lo largo de un número de veces consecutivas entonces estaremos en una recta.
+1. Calcular el centro de la línea a tres alturas diferentes, si estás tres coordenadas se encontraban alineadas estaremos en recta.
+2. División del centro de la imagen en tres rectángulos, uno central inferior que debería abarcar la mayor cantidad de línea en caso de estar en recta y dos superiores a izquierda y derecha. De este modo estaríamos en curva cuando los rectángulos superiores detecten línea, y en recta cuando los rectángulos superiores no detecten nada mientras que el central inferior posea un gran área de la línea.
+3. Cálculo del centro de la línea a dos alturas diferentes, siendo estas alturas en la parte superior de la línea y bastante próximas. Si ambas coordenadas se encuentran alineadas (o casi alineadas) respecto al eje vertical y esta condición se produce a lo largo de un número de veces consecutivas entonces estaremos en una recta.
 
 La opción que mejores resultados dió fué la tercera, ya que al seleccionar dos puntos en la parte superior de la línea tendremos una alta variabilidad entre ellos, en cuanto nos estemos acercando a una curva o estemos ya dentro de una el punto superior estará muy alejado del segundo y activaremos la configuración más conservadora para tomar lo mejor posible la curva. En la siguiente imagen se muestra a modo representativo los puntos escogidos el punto rosa corresponde al superior y el azul a inferior que a su vez corresponde con el punto obtenido como nuevo objetivo en cada frame.
 
-//TODO
+![top_point](https://github.com/garciamorenc/followline.github.io/blob/master/media/top_point.png)
 
 Cabe destacar que el cálculo de pesos para el controlador de giro en recta no resulta sencillo, ya que a máxima velocidad recorreremos la recta en muy poco tiempo y será difícil encontrar los valores óptimos.
 
