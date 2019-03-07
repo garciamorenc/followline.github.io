@@ -82,7 +82,7 @@ Cabe destacar que el cálculo de pesos para el controlador de giro en recta no r
 
 ## ¿Y si pierdo la línea?
 
-En caso de perder de vista la línea se ha decidido parar el coche y comenzar a girar en el sitio hasta volver a verla de nuevo, realizando el giro en función de la última dirección previa la pérdida de información.
+En caso de perder de vista la línea se ha decidido parar el coche y comenzar a girar en el sitio hasta volver a verla de nuevo, realizando el giro en función de la última dirección previa a la pérdida de información.
 
 ## Conclusiones
 
