@@ -9,7 +9,7 @@ El primer paso es realizar un proceso de extracción de puntos característicos 
 
 A través de estos puntos podremos obtener las correspondencias entre las dos imágenes y triangular la posición de los puntos en el espacio 3D.
 
-![canny](../media/canny.png)
+![canny](./media/canny.png)
 
 ## Geometría epipolar
 Comenzaremos trabajando sobre los puntos característicos de la imagen **izquierda** calculados en la anterior sección. Obtendremos su retroproyección 3D a partir de las siguientes funcionalidades que ofrece la interfaz JdeRobot.
@@ -31,7 +31,7 @@ Finalmente tan solo nos quedará calcular a través de la ecuación de la recta 
 
 Para acelerar el proceso se ha decidido calcular el punto menor (x=0) y mayor (x=ancho imagen) de la línea epipolar. Una vez tengamos estos dos puntos trazaremos una línea en imagen de ceros del mismo tamaño de la imagen (np.zeros()). Al trazar esta línea indicaremos el ancho que deseemos que tenga la franja epipolar, en este caso se ha escogido un tamaño de 2 píxeles por encima y debajo. De este modo habremos obtenido una máscara que utilizaremos para convolucionar sobre la imagen derecha del sistema y realizar el matching por parche que trataremos en la siguiente sección.
 
-![mask](/media/mask.png)
+![mask](./media/mask.png)
 
 Todo este proceso deberá de realizarse para cada uno de los puntos característicos obtenidos en la primera sección.
 
@@ -39,7 +39,7 @@ Todo este proceso deberá de realizarse para cada uno de los puntos característ
 
 AL realizar la convolución de la máscara que define nuestra franja epipolar sobre la imagen derecha de bordes, sabremos todos aquellos puntos que son una posible correspondencia y sobre los que debemos realizar el proceso de template matching para encontrar el mejor match con el punto inicial.
 
-![roi](/media/roi.png)
+![roi](./media/roi.png)
 
 Para este punto se han transformado al espacio de colores HSV las imágenes originales de ambas cámaras con el objetivo de ser invariantes a la iluminación de los objetos en cada imagen. Además se ha usado una plantilla de 13x13 teniendo como pixel centrar el punto que se considera una posible correspondencia. Para realizar la comparación se ha utilizado el método de openCV **cv2.matchTemplate** usando **cv2.TM_CCORR_NORMED** como comparador de similitud.
 
@@ -75,7 +75,7 @@ Finalmente tan solo nos quedaría representar el punto 3D encontrado como inters
 
 En las siguientes imágenes es puede apreciar el resultado obtenido tras seguir las secciones previas.
 
-![r1](/media/r1.png)
-![r2](/media/r2.png)
-![r3](/media/r3.png)
-![r4](/media/r4.png)
+![r1](./media/r1.png)
+![r2](./media/r2.png)
+![r3](./media/r3.png)
+![r4](./media/r4.png)
