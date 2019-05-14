@@ -1,4 +1,6 @@
-# Introducción
+## Reconstrucción 3D
+
+## Introducción
 
 En esta página vamos a hablar sobre la implementación realizada para el problema de reconstrucción 3D de una escena a través de una nube de puntos. Para poder calcular esta nube de punto se proporciona información de la escena desde dos cámaras situadas en posiciones distintas, de tal modo que esta configuración nos permitirá triangular la información de ambas imágenes.
 
