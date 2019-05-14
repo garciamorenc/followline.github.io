@@ -1,4 +1,4 @@
-## Reconstrucción 3D
+# Reconstrucción 3D
 
 ## Introducción
 
