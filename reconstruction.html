@@ -1,0 +1,7 @@
+---
+layout: default
+---
+<div class="main-content">
+    {% capture reconstruction %}{% include reconstruction.md %}{% endcapture %}
+    {{ reconstruction | markdownify }}
+</div>
