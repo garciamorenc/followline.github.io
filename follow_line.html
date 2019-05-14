@@ -1,7 +1,5 @@
 ---
 layout: default
 ---
-<div class="main-content">
-    {% capture follow_line %}{% include follow_line.md %}{% endcapture %}
-    {{ follow_line | markdownify }}
-</div>
+{% capture follow_line %}{% include follow_line.md %}{% endcapture %}
+{{ follow_line | markdownify }}
