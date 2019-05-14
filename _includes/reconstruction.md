@@ -9,7 +9,7 @@ El primer paso es realizar un proceso de extracción de puntos característicos 
 
 A través de estos puntos podremos obtener las correspondencias entre las dos imágenes y triangular la posición de los puntos en el espacio 3D.
 
-![canny](/media/canny.png)
+![canny](../media/canny.png)
 
 ## Geometría epipolar
 Comenzaremos trabajando sobre los puntos característicos de la imagen **izquierda** calculados en la anterior sección. Obtendremos su retroproyección 3D a partir de las siguientes funcionalidades que ofrece la interfaz JdeRobot.
