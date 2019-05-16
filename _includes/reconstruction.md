@@ -47,6 +47,7 @@ Este método nos devolverá una confianza entre 0 y 1 de que los parches compara
 
 Finalmente de todas las posibles correspondencias tomaremos como buena aquella que tenga el valor de confianza más alta.
 
+**Nota:** se ha probado el matching ademas de con HSV, mediante imágenes RGB y el error cuadrático medio (MSE). Los resultados obtenidos han sido bastante parecidos, esto creo que se debe a que las imagenes no se ven afectadas en gran medida con la iluminación de la escena, es decir, tenemos un sistema bastante controlado.
 
 ## Triangulación
 
@@ -73,7 +74,7 @@ Finalmente tan solo nos quedaría representar el punto 3D encontrado como inters
 
 ## Resultados
 
-En las siguientes imágenes es puede apreciar el resultado obtenido tras seguir las secciones previas.
+La reconstrucción tiene un tiempo medio de 1:46 minutos. En las siguientes imágenes es puede apreciar el resultado obtenido tras seguir las secciones previas.
 
 ![r1](./media/r1.png)
 ![r2](./media/r2.png)
