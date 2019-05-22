@@ -65,7 +65,7 @@ A través de los centros ópticos de cada cámara y los puntos 3D obtenidos de c
 - p3 = centro óptico imagen derecha
 - p4 = punto 3D imagen derecha
 
-![triangulation](./media/triangulacion.png)
+![triangulation](./media/tirangulacion.png)
 
 Es posible que al calcular la intersección de los rayos, estos nunca lleguen a cruzarse, por lo que calcularemos la distancia mínima entre dichos puntos y tomaremos como intersección el punto que quede a menor distancia de ambos rayos. Con el objetivo de no tener en cuenta malas correspondencias será necesario imponer un umbral a dicha distancia. Para la implementación de este punto nos hemos apoyado en la la referencia [The shortest line between two lines in 3D](http://paulbourke.net/geometry/pointlineplane/) y sus ejemplos de código.
 
